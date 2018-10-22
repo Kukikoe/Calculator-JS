@@ -9,7 +9,7 @@ body {
 }
 
 .calculator {
-	width: 350px;
+	width: 550px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 4em;
@@ -18,7 +18,7 @@ body {
 }
 
 .calculator__control {
-	width: calc(25% - 5px);	
+	width: calc(14.25% - 5px);	
 	height: 50px;	
 	background-color: #fff;
 	border: 1px solid black;
@@ -30,14 +30,23 @@ body {
 	cursor: pointer;	
 }
 
+.calculator__num {
+	background-color: #d8d1d0;
+}
+
 .calculator__input {
 	width: 100%;	
 	text-align: right;	
 	padding: 5px 10px;	
 }
 
-.calculator--half {
-	width: calc(50% - 5px);
+.calculator__clear {
+	width: calc(28.5% - 5px);
+	background-color: #f7d48f;
+}
+
+.calculator__equal {
+	background-color: #f2533e;
 }
 
 .calculator__char:active {
