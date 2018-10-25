@@ -104,11 +104,15 @@ calcEqual.addEventListener("click", (event) => {
 		}
 	}
 	let result = getResult(array);
-	result = parseInt(result);
-	console.log(result)
 	boolVal = false;
-	calcInput.value = result;
+	if (!isNumber(result)) {
+		return calcInput.value = "Error";
+	}
+	return calcInput.value = result;
+
 });
+
+function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
 //make the number positive or negative
 function handlePlusMinus(string) {
@@ -182,47 +186,6 @@ function getArrayFromString(string, operators) {
 	}
 	console.log(array.filter(element => element !== ""))
 	return array.filter(element => element !== "");
-}
-
-function calc(operation, arg1, arg2) {
-	switch(operation) {
-		case "/":
-		return arg1 / arg2;
-		case "×":
-		return arg1 * arg2;
-		case "+":
-		return arg1 + arg2;
-		case "-":
-		return arg1 - arg2;
-		case "%":
-		return arg1/100;
-		case "cos":
-		return Math.cos(arg1);
-		case "sin":
-		return Math.sin(arg1);
-		case "tan":
-		return Math.tan(arg1);
-		case "arcsin":
-		return Math.asin(arg1);
-		case "arccos":
-		return Math.acos(arg1);
-		case "arctan":
-		return Math.atan(arg1);
-		case "ln":
-		return Math.log(arg1);
-		case "lg":
-		return Math.log10(arg1);
-		case "^":
-		return Math.pow(arg1, arg2);
-		case "√":
-		return Math.sqrt(arg1);
-		case "!":
-		return factorial(arg1);
-	}	
-}
-
-function factorial(n) {
-	return (n != 1) ? n * factorial(n - 1) : 1;
 }
 
 //prioritizes operations
